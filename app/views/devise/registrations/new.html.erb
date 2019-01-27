@@ -1,0 +1,129 @@
+<div id="lp-register">
+  <div class="container wrapper">
+    <div class="row">
+      <div class="col-sm-5">
+        <div class="intro-texts">
+          <h1 class="text-white">Un réseau social qui regroupe tous les jeunes faiseurs de paix dans le monde !!!! </h1>
+          <p>La paix n’est pas seulement la simple absence de violence ou de troubles. C’est quand il y a une
+            possibilité de conflit mais que vous décidez délibérément d’éviter la violence, d’adopter et d’utiliser des
+            méthodes et des moyens pacifiques pour résoudre le problème. Cela est la véritable paix.<br /> <br />"Dalaï Lama "           .</p>
+       <a href="/home/front" class="href">  <button class="btn btn-primary">Voir Plus ...</button></a>
+        </div>
+      </div>
+      <div class="col-sm-6 col-sm-offset-1">
+        <div class="reg-form-container">
+
+          <!-- Register/Login Tabs-->
+          <div class="reg-options">
+            <ul class="nav nav-tabs">
+              <li class="active"><a href="#register" data-toggle="tab">S'enregistrer</a></li>
+
+            </ul>
+            <!--Tabs End-->
+          </div>
+
+          <!--Registration Form Contents-->
+          <div class="tab-content">
+            <div class="tab-pane active" id="register">
+              <h3>Enregistrez-vous maintenant !!!! </h3>
+              <p class="text-muted">Soyez cool et rejoignez-nous aujourd'hui. Rencontrer des millions                </p>
+
+              <!--Register Form-->
+              <!-- <form name="registration_form" id='registration_form' class="form-inline">
+                <div class="row">
+                  <div class="form-group col-xs-6">
+                    <label for="firstname" class="sr-only">First Name</label>
+                    <input id="firstname" class="form-control input-group-lg" type="text" name="firstname" title="Enter first name"
+                      placeholder="First name" />
+                  </div>
+                  <div class="form-group col-xs-6">
+                    <label for="lastname" class="sr-only">Last Name</label>
+                    <input id="lastname" class="form-control input-group-lg" type="text" name="lastname" title="Enter last name"
+                      placeholder="Last name" />
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="form-group col-xs-12">
+                    <label for="email" class="sr-only">Email</label>
+                    <input id="email" class="form-control input-group-lg" type="text" name="Email" title="Enter Email"
+                      placeholder="Your Email" />
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="form-group col-xs-12">
+                    <label for="password" class="sr-only">Password</label>
+                    <input id="password" class="form-control input-group-lg" type="password" name="password" title="Enter password"
+                      placeholder="Password" />
+                  </div>
+                </div>
+
+                <div class="form-group gender">
+                  <label class="radio-inline">
+                    <input type="radio" name="optradio" checked>Male
+                  </label>
+                  <label class="radio-inline">
+                    <input type="radio" name="optradio">Female
+                  </label>
+                </div>
+
+              </form> -->
+
+              <%= form_for(resource, as: resource_name, url: registration_path(resource_name),class: "form-inline") do |f| %>
+              <% if resource.errors.any? %>
+              <div class="alert alert-danger alert-dismissable">
+                <%= resource.errors.full_messages.first %>
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+              </div>
+              <% end %>
+              <div class="form-group">
+
+                <%= f.text_field :name, class: 'form-control', autofocus: true, placeholder: 'nom complet' %>
+              </div>
+              <div class="form-group">
+
+                <%= f.email_field :email, class: 'form-control', placeholder: 'email@exemple.com' %>
+              </div>
+              <div class="form-group">
+
+                <% if @minimum_password_length %>
+                <em>(
+                  <%= @minimum_password_length %> character minimum)</em>
+                <% end %><br>
+                <%= f.password_field :password, class: 'form-control', autocomplete: 'off', placeholder: 'mot de passe (8 caractère minimum)' %>
+              </div>
+              <div class="form-group">
+
+                <%= f.password_field :password_confirmation, class: 'form-control', autocomplete: 'off', placeholder: 'confirmer mot de passe' %>
+              </div>
+              <div class="actions">
+                <%= f.submit 'Enregistrer', class: 'btn btn-primary' %>
+              </div>
+              <% end %>
+              <br>
+              <%= render 'devise/shared/links' %>
+
+              <!--Register Now Form Ends-->
+
+            </div>
+            <!--Registration Form Contents Ends-->
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6 col-sm-offset-6">
+
+        <!--Social Icons-->
+        <ul class="list-inline social-icons">
+          <li><a href="#"><i class="icon ion-social-facebook"></i></a></li>
+          <li><a href="#"><i class="icon ion-social-twitter"></i></a></li>
+          <li><a href="#"><i class="icon ion-social-googleplus"></i></a></li>
+          <li><a href="#"><i class="icon ion-social-pinterest"></i></a></li>
+          <li><a href="#"><i class="icon ion-social-linkedin"></i></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

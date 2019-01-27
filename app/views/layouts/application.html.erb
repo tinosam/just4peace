@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+    <%= csrf_meta_tags %>
+  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="This is social network html5 template available in themeforest......" />
+    <meta name="keywords" content="Social Network, Social Media, Make Friends, Newsfeed, Profile Page" />
+    <meta name="robots" content="index, follow" />
+    <title>Jeunes Faiseur de Paix</title>
+  
+    <!-- Stylesheets
+      ================================================= -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1//css/ionicons.min.css" class="href">
+    <link rel="stylesheet" href="/css/font-awesome.min.css" />
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0//css/font-awesome.min.css" rel="stylesheet" media="screen" />
+    <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1//css/ionicons.min.css" class="href">
+  
+    <!--Google Font-->
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700,700i" rel="stylesheet">
+  
+    <!--Favicon-->
+    <link rel="shortcut icon" type="image/png" href="images/fav.png" />
+    
+    
+  <!--  ------------------------------------------------------->
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Gloria+Hallelujah|Julius+Sans+One|Kaushan+Script|Libre+Franklin|Marck+Script|ZCOOL+KuaiLe" rel="stylesheet">
+  <!--
+  font-family: 'ZCOOL KuaiLe', cursive;
+  font-family: 'Libre Franklin', sans-serif;
+  font-family: 'Amatic SC', cursive;
+  font-family: 'Gloria Hallelujah', cursive;
+  font-family: 'Julius Sans One', sans-serif;
+  font-family: 'Kaushan Script', cursive;
+  font-family: 'Marck Script', cursive;
+  -->
+  </head>
+  
+  <body>
+    <%= render 'shared/navbar' %>
+    <% unless notice.blank? %>
+      <div class="alert alert-info alert-dismissable alert-fixed">
+        <%= notice %>
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      </div>
+    <% end %>
+    <% unless alert.blank? %>
+      <div class="alert alert-danger alert-dismissable alert-fixed">
+        <%= alert %>
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      </div>
+    <% end %>
+   
+      <%= yield %>
+   
+
+    <div id="spinner-wrapper">
+      <div class="spinner"></div>
+    </div>
+  
+    <!--Buy button-->
+  
+    <!-- Scripts
+        ================================================= -->
+    <!-- <script src="/js/jquery-3.1.1.min.js"></script> -->
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/jquery.appear.min.js"></script>
+    <script src="/js/jquery.incremental-counter.js"></script>
+    <script src="/js/script.js"></script>
+  </body>
+</html>

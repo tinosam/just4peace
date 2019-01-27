@@ -1,0 +1,49 @@
+<section id="banner">
+  <div class="container">
+    <div class="row">
+      <br>
+        <div class="jumbotron jumbotron-fluid">
+          <!-- <h1 class="display-4">Citations : </h1> -->
+          <p class="lead">Prions pour la paix dans le monde et le respect de nos différences ethniques.</p>
+          <hr class="my-4">
+          <p>On aimerait que notre oeuvre contribue à la lutte pour la paix et la liberté .              </p>
+          <a class="btn btn-primary btn-lg" href="#" role="button">Notre page facebook</a>
+    
+        </div>
+      </div>
+</div>
+</section>
+
+<div id="page-contents">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3" style="position:static;">
+        <%= render 'shared/user_info' %>
+      </div>
+
+      <div class="col-md-5">
+        <%= render 'posts/form' %>
+        <hr>
+        <div id="activities">
+          <% if @activities.empty? %>
+          <div class="well">
+            <%= render('shared/no_resource', resources: 'Activities') %>
+          </div>
+          <% else %>
+          <%= render_activities(@activities, layout: '/shared/activity') %>
+          <% end %>
+        </div>
+        <%= render 'shared/paginate', resources: @activities %>
+        <!-- Post Create Box
+          ================================================= -->
+      </div>
+
+
+      <%= render 'shared/disqus'%>
+
+    </div>
+  </div>
+</div>
+
+
+<script id="dsq-count-scr" src="//test-va5fupeos5.disqus.com/count.js" async></script>

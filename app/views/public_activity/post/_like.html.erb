@@ -1,0 +1,34 @@
+<div id="page-contents ">
+  <div class="container ">
+    <div class="row">
+      <% if activity_resources_exist?(activity) %>
+      <div id="activity-<%= activity.id %>" class="activity">
+        <div class="activity-like">
+          <diV class="col-md-1">
+            <%= render 'shared/avatar', user: activity.owner %>
+          </diV>
+          <div class="col-md-11">
+            <h4>
+              <%= link_to activity.owner.name, user_path(activity.owner) %>
+
+              <span class="action">a aimé
+                <%= link_to 'post', activity.trackable %>
+              </span>
+            </h4>
+
+            <div class="content">
+              <h4><small>
+                  <%= activity.trackable.content_html %></small>
+              </h4>
+              <%= render 'shared/created_at', activity: activity %>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<hr>

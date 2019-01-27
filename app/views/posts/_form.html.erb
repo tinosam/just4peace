@@ -1,0 +1,30 @@
+<div class="post-content">
+  <div class="well">
+    <div id="mentionable-data" data-content="<%= mentionable_user_path(current_user) %>"></div>
+    <%= form_for @post, html: { class: 'post_form' } do |f| %>
+    <div class="form-group">
+      <h5 class="text-center ">Mettez à jour votre statut :</h5>
+
+      <div id="post-content" contenteditable="true" class="editable form-control input-mentionable" placeholder="What'up?"></div>
+      <%= f.hidden_field :content, value: @post.content, class: 'form-control input-mentionable', autofocus: true %>
+    </div>
+    <div id="img-preview" class="form-group hidden ">
+      <img src="" alt="Preview" class="img-responsive post-image">
+    </div>
+    <div class="form-group hidden">
+      <%= f.file_field :attachment %>
+    </div>
+    <div class="form-group">
+      <a id="post-attachment" href="javascript:void(0);" class=" btn btn-primary" ,class="img-responsive post-image">
+        <%= fa_icon 'image' %>
+      </a>
+      <%= f.submit 'Publier', class: 'btn btn-primary pull-right'%>
+    </div>
+    <% if @post.attachment.present? %>
+    <div class="attachment">
+      <%= image_tag @post.attachment %>
+    </div>
+    <% end %>
+    <% end %>
+  </div>
+</div>

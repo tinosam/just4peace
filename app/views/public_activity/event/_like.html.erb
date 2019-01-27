@@ -1,0 +1,35 @@
+<div class="post-content well">
+  <div class="post-container">
+    <div class="row">
+      <% if activity_resources_exist?(activity) %>
+      <div id="activity-<%= activity.id %>" class="activity">
+        <% if activity.trackable %>
+        <div class="activity-like">
+          <div class="col-md-2">
+            <%= render 'shared/avatar', user: activity.owner %>
+          </div>
+          <div class="col-md-10">
+            <h4 class="name">
+              <%= link_to activity.owner.name, user_path(activity.owner) %>
+            </h4>
+            <span class="action">A liker <%= link_to 'event', activity.trackable %></span>
+
+            <hr>
+
+            <div class="content">
+              <h3><small>
+                  <%= activity.trackable.name %></small></h4>
+              <h3><small>
+                  <%= fa_icon'calendar' %>
+                  <%= formatted_time(activity.trackable.event_datetime) %></small></h4>
+            </div>
+            <%= render 'shared/created_at', activity: activity %>
+
+          </div>
+        </div>
+        <% end %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
