@@ -1,13 +1,12 @@
-CarrierWave.configure do |config|
-  if Rails.env.production?
+if Rails.env.production?
+  CarrierWave.configure do |config|
     config.fog_credentials = {
-      provider:              'AWS', # required
-      aws_access_key_id:     Rails.application.secrets.aws_access_key_id, # required
-      aws_secret_access_key: Rails.application.secrets.aws_secret_access_key, # required
-      region:                'us-east-1', # optional, defaults to 'us-east-1'
+      # Configuration for Amazon S3
+      provider: 'AWS',
+      aws_access_key_id: ENV['AKIAI367JHRCZ2XUVTDA'],
+      aws_secret_access_key: ENV['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'],
+      region: ENV['S3_REGION']
     }
-    config.fog_directory  = 'socify' # required
-    config.fog_public     = true # optional, defaults to true
-    config.fog_attributes = { 'Cache-Control' => "max-age=#{365.day.to_i}" } # optional, defaults to {}
+    config.fog_directory = ENV['S3_BUCKET']
   end
 end
