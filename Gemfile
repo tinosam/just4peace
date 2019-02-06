@@ -4,6 +4,8 @@ ruby '~> 2.5.1'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails'
 
+#gem 'faker'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -34,7 +36,9 @@ group :development, :test do
 end
 
 group :production do
+#base de donnée
   gem 'pg'
+#########
   gem 'unicorn'
   gem 'rails_12factor'
   gem 'fog'
